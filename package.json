@@ -1,7 +1,7 @@
 {
-  "name": "event-promise",
+  "name": "lt-event-promise",
   "version": "1.0.0",
-  "description": "event emitter with promise when emit",
+  "description": "Same as EventEmitter but return Promise of executing listeners when emit()",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
