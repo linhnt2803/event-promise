@@ -1,0 +1,25 @@
+{
+  "name": "event-promise",
+  "version": "1.0.0",
+  "description": "event emitter with promise when emit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linhnt2803/event-promise.git"
+  },
+  "keywords": [
+    "event",
+    "event-emitter",
+    "event-promise",
+    "promise"
+  ],
+  "author": "LT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linhnt2803/event-promise/issues"
+  },
+  "homepage": "https://github.com/linhnt2803/event-promise#readme"
+}
