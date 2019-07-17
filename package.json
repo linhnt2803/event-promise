@@ -1,6 +1,6 @@
 {
   "name": "lt-event-promise",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Same as EventEmitter but return Promise of executing listeners when emit()",
   "main": "index.js",
   "scripts": {
