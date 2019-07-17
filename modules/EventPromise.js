@@ -24,7 +24,7 @@ class EventPromise {
     let eventListeners = this._listeners[eventName]
     if (!(eventListeners instanceof Array))
       return
-    return Promise.all(eventListeners.map(listener => listener(...data)))
+    return Promise.all(eventListeners.map(listener => () => listener(...data)).map(executer => executer()))
   }
 
   removeListener(eventName, listener) {
