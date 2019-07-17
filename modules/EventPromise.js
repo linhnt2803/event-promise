@@ -12,6 +12,14 @@ class EventPromise {
     listeners.forEach(listener => this._addListener(eventName, listener))
   }
 
+  once(eventName, ...listeners) {
+    listeners = listeners.filter(listener => listener instanceof Function)
+    if (typeof eventName != 'string' || !listeners.length)
+      return
+    this._addEvent(eventName)
+    listeners.forEach(listener => this._addListenerOnce(eventName, listener))
+  }
+
   emit(eventName, ...data) {
     let eventListeners = this._listeners[eventName]
     if (!(eventListeners instanceof Array))
@@ -27,7 +35,7 @@ class EventPromise {
     listenerIndex = eventListeners.indexOf(listener)
     if (listenerIndex < 0)
       return
-    return this.eventListeners.splice(listenerIndex, 1)
+    return eventListeners.splice(listenerIndex, 1)
   }
 
   removeAllListeners(eventName) {
@@ -54,6 +62,14 @@ class EventPromise {
     if (!(eventListeners instanceof Array) || eventListeners.indexOf(listener) >= 0)
       return
     eventListeners.push(listener)
+  }
+
+  _addListenerOnce(eventName, listener) {
+    let listenerOnce = (...data) => {
+      this.removeListener(eventName, listenerOnce)
+      return listener(...data)
+    }
+    this._addListener(eventName, listenerOnce)
   }
 }
 
