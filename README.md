@@ -1,7 +1,7 @@
 # event-promise
 A respository for npm [lt-event-promise](https://www.npmjs.com/package/lt-event-promise)
 
-Same as node module event.EventEmitter but return Promise of executing listeners when call emit()
+Same as node module events.EventEmitter but return Promise of executing listeners when call emit()
 
 ## Installing
 
