@@ -81,24 +81,4 @@ class EventPromise {
   }
 }
 
-const emitter = new EventPromise()
-
-// emitter.on('task', doTask)
-// emitter.emit('task')
-//   .then(console.log)
-//   .catch(err => {
-//     console.log('catch error here')
-//   })
-
-// function doTask() { return 'data' }
-
-async function test() {
-  emitter.on('test', errorTask)
-
-  emitter.emit('test')
-    .catch(() => console.log('error'))
-}
-test()
-function errorTask() { throw new Error('Something went wrong!') }
-
 module.exports = EventPromise
